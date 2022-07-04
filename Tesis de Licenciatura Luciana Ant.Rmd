@@ -1,0 +1,156 @@
+---
+title: ''
+fontfamily: accanthis
+output:
+  pdf_document:
+    highlight: breezedark
+    extra_dependencies: float
+    fig_caption: yes
+    number_sections: yes
+    toc: no
+    toc_depth: 4-
+    latex_engine: xelatex
+mainfont: LiberationSerif
+sansfont: LiberationSans
+monofont: LiberationMono
+bibliography: "scripts/citations.bib"
+toc-title: your title
+geometry: left = 2.5cm, right = 2.5cm, top = 2.4cm, bottom = 2.4cm
+linestretch: '1.5'
+header-includes:
+- \usepackage[fontsize=13pt]{scrextend}
+- \usepackage{float}
+- \floatplacement{figure}{H}
+- \usepackage[skins]{tcolorbox}
+- \usepackage[font={small}]{caption}
+- \usepackage{natbib}\bibliographystyle{agsm}
+- \usepackage[nottoc, numbib]{tocbibind}
+- \newcommand{\beginsupplement}{ \setcounter{table}{0}  \renewcommand{\thetable}{S\arabic{table}} \setcounter{figure}{0} \renewcommand{\thefigure}{S\arabic{figure}}}
+lang: es-MX
+---
+\renewcommand{\figurename}{Figura}
+
+\renewcommand{\tablename}{Tabla}
+
+\renewcommand{\arraystretch}{2}
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = F,  dev="cairo_pdf")
+options(tinytex.verbose = TRUE)
+
+
+```
+
+\pagenumbering{gobble}
+
+
+
+\begin{centering}
+
+
+
+```{r, echo=F, out.width="20%"}
+# knitr::include_graphics("img/uniedlogo.png")
+#tinytex::install_tinytex()
+```
+
+
+``` {r , echo=F, out.width="90%"}
+knitr::include_graphics("images/membrete.png")
+```
+
+
+
+
+
+\vspace{1 cm}
+\LARGE
+
+{\bf Análisis preliminar de la topología del genoma en la diferenciación de células endometriales humanas}
+
+\large
+Tesis de Licenciatura en Ciencias Biológicas
+
+
+\vspace{1.5 cm}
+
+
+
+\normalsize
+
+\Large
+
+{\bf Luciana Ant}
+
+\vspace{1 cm}
+
+\normalsize
+
+Directora:
+
+\Large
+
+{\bf Patricia Saragüeta}
+
+\vspace{1cm}
+
+\large
+{ Universidad de Buenos Aires, Facultad de Ciencias Exactas y Naturales}
+
+\normalsize
+Laboratorio de Regulación Hormonal del Tracto Reproductivo Femenino, Instituto de Biología y
+Medicina Experimental, IBYME-CONICET, Buenos Aires, Argentina.\
+
+\vspace{0.5cm}
+
+\normalsize
+
+04/2022
+
+\end{centering}
+
+
+\newpage
+\pagenumbering{arabic}
+\centering
+\raggedright
+\newpage
+\setcounter{tocdepth}{2}
+\renewcommand{\contentsname}{Contenidos}
+\tableofcontents
+\newpage
+
+\newpage
+
+```{r acknowledgments, child='scripts/abreviaturas.Rmd'}
+```
+\newpage
+
+```{r acknowledgments, child='scripts/Resumen sp en.Rmd'}
+```
+\newpage
+```{r acknowledgments, child='scripts/intro.Rmd'}
+```
+
+\newpage
+```{r acknowledgments, child='scripts/objetivos.Rmd'}
+```
+
+\newpage
+```{r acknowledgments, child='scripts/Mat & met & results.Rmd'}
+```
+
+\newpage
+```{r acknowledgments, child='scripts/Discución.Rmd'}
+```
+
+\beginsupplement
+
+\newpage
+```{r acknowledgments, child='scripts/Anexo.Rmd'}
+```
+
+\newpage
+```{r acknowledgments, child='scripts/bibliography.Rmd'}
+```
